@@ -10,9 +10,39 @@
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div id="user-status" class="hidden">
+        <span id="user-welcome"></span>
+        <button id="logout-btn" type="button">Log Out</button>
+      </div>
     </header>
 
     <main>
+      <section id="auth-container">
+        <h3>Login or Sign Up</h3>
+        <p id="auth-required-note" class="info hidden">Please log in to register for activities.</p>
+
+        <div class="auth-switch">
+          <button id="show-login" type="button" class="secondary-btn">Login</button>
+          <button id="show-signup" type="button" class="secondary-btn">Sign Up</button>
+        </div>
+
+        <form id="auth-form">
+          <div class="form-group">
+            <label for="auth-email">Email:</label>
+            <input type="email" id="auth-email" required placeholder="your-email@mergington.edu" />
+          </div>
+          <div class="form-group hidden" id="auth-name-group">
+            <label for="auth-name">Name:</label>
+            <input type="text" id="auth-name" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="auth-password">Password:</label>
+            <input type="password" id="auth-password" required minlength="8" />
+          </div>
+          <button type="submit" id="auth-submit-btn">Login</button>
+        </form>
+      </section>
+
       <section id="activities-container">
         <h3>Available Activities</h3>
         <div id="activities-list">
@@ -25,8 +55,8 @@
         <h3>Sign Up for an Activity</h3>
         <form id="signup-form">
           <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+            <label for="current-user-email">Logged in as:</label>
+            <input type="text" id="current-user-email" disabled />
           </div>
           <div class="form-group">
             <label for="activity">Select Activity:</label>
